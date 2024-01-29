@@ -3,13 +3,7 @@ A repository for learning LangChain by building a generative ai application.
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
-
-`OPENAI_API_KEY`
-
-`PROXYCURL_API_KEY`
-
-`SERPAPI_API_KEY`
+To run this project, you will need to rename the existing `.env.sample` file to `.env` and populate the values of environment variables
 
 ## Run Locally
 Clone the project

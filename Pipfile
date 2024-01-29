@@ -7,6 +7,7 @@ name = "pypi"
 langchain = "*"
 black = "*"
 python-dotenv = "*"
+tweepy = "*"
 
 [dev-packages]
 

@@ -19,7 +19,9 @@ def scrape_linkedin_profile(linkedin_profile_url: str):
         header_dic = {"Authorization": f'Bearer {os.environ.get("PROXYCURL_API_KEY")}'}
 
         response = requests.get(
-            api_endpoint, params={"linkedin_profile_url": linkedin_profile_url}, headers=header_dic
+            api_endpoint,
+            params={"linkedin_profile_url": linkedin_profile_url},
+            headers=header_dic,
         )
 
         json_data = response.json()
@@ -28,11 +30,11 @@ def scrape_linkedin_profile(linkedin_profile_url: str):
     return _clean_response(json_data)
 
 
-def _clean_response(response_json: dict) -> dict:
+def _clean_response(response: dict) -> dict:
     # Removing unnecessary empty notes
     data = {
         k: v
-        for k, v in response_json.items()
+        for k, v in response.items()
         if v not in ([], "", "", None)
         and k not in ["people_also_viewed", "certifications"]
     }
@@ -55,5 +57,7 @@ def _get_profile_data_from_file() -> Any:
 
         return json.loads(data)
 
-    print("The static file do not exist at path: third_parties/linkedin_data.json. In case you want to avoid http calls"
-          "please store the json response in static file at third_parties/linkedin_data.json")
+    print(
+        "The static file do not exist at path: third_parties/linkedin_data.json. In case you want to avoid http calls"
+        "please store the json response in static file at third_parties/linkedin_data.json"
+    )
