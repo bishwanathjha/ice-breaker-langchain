@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Skip any modification to this file
+third_parties/linkedin_data.json

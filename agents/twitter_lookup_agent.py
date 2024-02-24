@@ -13,7 +13,7 @@ def lookup(name: str) -> str:
 
     tools_for_agent = [
         Tool(
-            name="Crawl Google 4 Twitter profile page",
+            name="Crawl Google for Twitter profile page",
             func=get_profile_url,
             description="useful for when you need get the Twitter Page URL",
         )
